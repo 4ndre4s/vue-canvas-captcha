@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="container">
+      <captcha :user-input-for-passphrase="userInput"
+               @right-passphrase="grantAccess"
+               @wrong-passphrase="showErrorMessage = true"/>
+      <form @submit.prevent="userInput = inputVal">
+        <input type="text" v-model="inputVal" @input="showErrorMessage = false">
+        <button type="Submit">Submit</button>
+      </form>
+    </div>
+    <div v-if="hasAccess">
+      Special Secret :)
+    </div>
+    <div v-if="showErrorMessage">
+      Wrong passphrase, try again!
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Captcha from '@/components/Captcha'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { Captcha },
+  data () {
+    return {
+      inputVal: '',
+      userInput: '',
+      hasAccess: false,
+      showErrorMessage: false
+    }
+  },
+  methods: {
+    grantAccess () {
+      this.hasAccess = true
+    }
   }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped lang="sass">
+.container
+  display: flex
+  align-items: center
 </style>
