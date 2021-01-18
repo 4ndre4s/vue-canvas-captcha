@@ -9,14 +9,14 @@ The component expects automatically generates a passphrase and displays it via c
 Following parameters are available for selection:
 
 | name        | type | required           | default  |
-| --- | :---: |:---:| :---:|
-| userInputForPassphrase | String | yes | - |
-| phraseLength | String | no | 8 |
-| alphabet | String | no | 'abcdefghijklmnopqrstuvwxyz0123456789+-*§$%&' |
-| fontSize | String | no | '16px' |
-| fontFamily | String | no | 'Verdana |
-| canvasSize | Object | no | {width: 100, height: 24} |
-| canvasPosition | Object | no | {x: 0, y: 16} |
+| --- | :---: |:---:| ---|
+| *userInputForPassphrase* | String | yes | - |
+| *phraseLength* | String | no | ```8``` |
+| *alphabet* | String | no | ```abcdefghijklmnopqrstuvwxyz0123456789+-*§$%&``` |
+| *fontSize* | String | no | ```16px``` |
+| *fontFamily* | String | no | ```Verdana``` |
+| *canvasSize* | Object | no | ```{width: 100, height: 24}``` |
+| *canvasPosition* | Object | no | ```{x: 0, y: 16}``` |
 
 ## Contribute
 
