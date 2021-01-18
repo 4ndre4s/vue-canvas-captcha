@@ -37,7 +37,7 @@ export default {
       })
     },
     userInputForPassphrase: {
-      default: ''
+      required: true
     }
   },
   mounted () {
