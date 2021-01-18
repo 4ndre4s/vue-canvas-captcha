@@ -6,7 +6,7 @@ The Captcha component (`src/components/Captcha.vue`) offers a simple way to impl
 
 The component expects automatically generates a passphrase and displays it via canvas. This ensures that the phrase cannot be found via simple DOM analysis. The component is given the user's input for the phrase, checks for equality and sends an event based on the result of the check.
 
-Following parameters are available for selection:
+**Following parameters are available for selection:**
 
 | name        | type | required           | default  |
 | --- | :---: |:---:| ---|
@@ -17,6 +17,13 @@ Following parameters are available for selection:
 | *fontFamily* | String | no | ```Verdana``` |
 | *canvasSize* | Object | no | ```{width: 100, height: 24}``` |
 | *canvasPosition* | Object | no | ```{x: 0, y: 16}``` |
+
+**Overview of the events**
+
+| name        | description 
+| --- | --- 
+| *right-passphrase* | Emitted when the **right** passphrase has been submitted. |
+| *wrong-passphrase* | Emitted when a **wrong** passphrase has been submitted. |
 
 ## Contribute
 
